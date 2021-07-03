@@ -1,0 +1,23 @@
+@import '../vars.scss';
+
+#log {
+    width: 300px;
+    background: #000;
+    color: #C6C6C6;
+
+    padding: 10px;
+    overflow-y: auto;
+    font-family: monospace;
+    white-space: pre-wrap;
+    border-left: 2px solid $sidebar-border;
+    .log-error {
+        color: #CE706A;
+    }
+    .log-info {
+        color: #B2E4FF;
+    }
+    .log-debug {
+        color: #8B989F;
+    }
+}
+

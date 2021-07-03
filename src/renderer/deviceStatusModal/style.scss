@@ -1,0 +1,24 @@
+@import '../vars.scss';
+
+.device-status-modal-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.device-status-modal {
+    background: $modal-bg;
+    border: 2px solid $modal-border;
+    width: 50%;
+    text-align: center;
+    p {
+        margin: 0;
+    }
+}

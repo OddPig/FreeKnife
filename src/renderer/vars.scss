@@ -1,0 +1,14 @@
+$color-initial: #fff;
+$color-primary: #EA5F5F;
+$color-secondary: rgba(255,255,255,0.6);
+$color-tertiary: #f4f5f6;
+$color-quaternary: rgba(255,255,255,0.4);
+$color-quinary: #e1e1e1;
+
+$page-bg: #1E1E1E;
+$header-bg: desaturate(darken($color-primary, 5%), 3%);
+$footer-bg: lighten($page-bg, 8%);
+$sidebar-bg: lighten($page-bg, 2%);
+$sidebar-border: lighten($page-bg, 6%);
+$modal-bg: $page-bg;
+$modal-border: lighten($page-bg, 8%);

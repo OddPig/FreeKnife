@@ -1,0 +1,39 @@
+@import '../vars.scss';
+
+
+.page-workspace {
+    display: flex;
+    flex-direction: row;
+}
+
+.page-workspace-sidebar {
+    background: $sidebar-bg;
+    width: 310px;
+    border-right: 2px solid $sidebar-border;
+    padding: 10px;
+}
+
+
+
+.page-workspace-content {
+    flex-grow: 1;
+    text-align: center;
+    .file-drop {
+        height: 100%;
+    }
+    .file-drop-target {
+        padding: 20px 0;
+        border: 3px dashed $color-quaternary;
+        margin: 10px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: calc(100% - 20px);
+    }
+    .file-drop-dragging-over-frame {
+        background: #CCC;
+    }
+}
+

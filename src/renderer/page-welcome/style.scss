@@ -1,0 +1,49 @@
+@import '../vars.scss';
+
+.page-welcome {
+    background: $page-bg;
+    background-size: cover;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    &.bg1 {
+        background: $page-bg url(bg1.svg);
+        background-size: cover;
+    }
+    &.bg2 {
+        background: $page-bg url(bg2.svg);
+        background-size: cover;
+    }
+    &.bg3 {
+        background: $page-bg url(bg3.svg);
+        background-size: cover;
+    }
+    &.bg4 {
+        background: $page-bg url(bg4.svg);
+        background-size: cover;
+    }
+    &.bg5 {
+        background: $page-bg url(bg5.svg);
+        background-size: cover;
+    }
+    
+    .welcome-modal {
+        background: $modal-bg;
+        border: 2px solid $modal-border;
+        //border-radius: 20px;
+    
+        padding: 50px;
+        width: 620px;
+        text-align: center;
+        h1 {
+            color: #fff;
+        }
+        textarea {
+            resize: none;
+            height: 100px;
+        }
+    }
+    
+}
+

@@ -1,0 +1,52 @@
+{
+  "name": "freeknife",
+  "version": "0.0.1",
+  "license": "GPL-3.0-or-later",
+  "description": "An unoffical open-source controller for Cricut brand cutting machines, not associated with Cricut Inc.",
+  "author": {
+    "name" : "OddPig",
+    "url" : "https://github.com/OddPig"
+  },
+  "scripts": {
+    "dev": "electron-webpack dev",
+    "compile": "electron-webpack",
+    "rebuild": "./node_modules/.bin/electron-rebuild",
+    "dist": "yarn compile && electron-builder -wml",
+    "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "dependencies": {
+    "@mattkrick/sanitize-svg": "^0.3.1",
+    "milligram-scss": "^1.4.1",
+    "path-data-polyfill": "^1.0.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-file-drop": "^3.1.2",
+    "serialport": "^9.2.0",
+    "source-map-support": "^0.5.16"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.14.5",
+    "electron": "8.2.0",
+    "electron-builder": "^22.4.1",
+    "electron-rebuild": "^2.3.5",
+    "electron-webpack": "^2.8.2",
+    "node-sass": "^6.0.0",
+    "sass-loader": "^10",
+    "webpack": "~4.42.1"
+  },
+  "build": {
+    "mac": {
+      "target": "zip",
+      "icon": "build/logo.icns"
+    },
+    "win": {
+      "target": "portable",
+      "icon": "build/logo512x512.png"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "build/logo512x512.png"
+    }
+  }
+}

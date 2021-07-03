@@ -1,0 +1,27 @@
+
+@import './vars.scss';
+@import '../../node_modules/milligram-scss/dist/milligram.scss';
+@import '../../node_modules/normalize.css';
+
+html, body, #app {
+    height: 100%;
+    width: 100%;
+    background: $page-bg;
+}
+
+.page {
+    flex-grow: 1;
+}
+
+input, select, textarea {
+    color: $color-initial;
+}
+
+select {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 8" width="30"><path fill="rgba(255, 255, 255, 0.4)" d="M0,0l6,8l6-8"/></svg>') center right no-repeat;
+    padding-right: 3rem;
+}
+
+option { 
+    color: #000;
+}

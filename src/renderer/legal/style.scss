@@ -1,0 +1,16 @@
+@import '../vars.scss';
+
+#legal-footer {
+    flex-shrink: 0;
+    padding: 0 10px;
+    background: $footer-bg;
+}
+
+#main {
+    flex-grow: 1;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+}
