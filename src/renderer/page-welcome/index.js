@@ -38,21 +38,27 @@ export default class WelcomePage extends React.Component {
 
     validateKeys(value) {
         var keys = value.split("\n");
+        var correctKey;
 
+        const correctChecksum = 4425; //magic number based on the keys I extracted
         var checksum = 0;
-        const correctChecksum = 17506; //magic number based on the keys I extracted
 
         for (let i = 0; i < keys.length; i++) {
             keys[i] = keys[i].trim();
+            checksum = 0;
             for (let ch = 0; ch < keys[i].length; ch++) {
                 checksum += keys[i].charCodeAt(ch);
             }
+            if (correctChecksum == checksum) {
+                correctKey = keys[i];
+                break;
+            }
         }
-        //todo better validation - key length, number of keys
+        //todo better validation
 
         return {
-            keys: keys,
-            isValid: checksum == correctChecksum,
+            keys: [correctKey],
+            isValid: typeof correctKey != 'undefined',
             checksum: checksum
         };
     }
@@ -77,10 +83,8 @@ export default class WelcomePage extends React.Component {
             return (
                 <div className="welcome-modal">
                     <h1>Welcome to FreeKnife!</h1>
-                    <p>Before we get started we need you to paste Cricut’s encryption keys below. We need these talk to your device.
-                    </p>
-                    <p>For legal reasons we can’t distribute these keys ourselves. Please see this <a onClick={this.onLinkClick} data-href="https://github.com/mmozeiko/aes-finder">page (TODO add better link)</a> for a
-                        guide on how to extract the keys. There are four alphanumeric keys - please enter one per line without commas or quotes.</p>
+                    <p>Before we get started we need you to paste Cricut’s encryption keys below. We need these talk to your device.</p>
+                    <p>It may or may not be possible to extract them with <a onClick={this.onLinkClick} data-href="https://github.com/mmozeiko/aes-finder">aes-finder</a>. There are several alphanumeric keys, but only one matters as far as we know - please enter the keys you have one per line without commas or quotes and we'll check if you have the right one. The correct key begins with "1840"</p>
                     <textarea rows="4" cols="50" value={this.value} onChange={this.handleChange}></textarea>
                     <button onClick={this.handleSubmit} >Go</button>
                 </div>

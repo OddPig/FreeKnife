@@ -306,8 +306,6 @@ export default class WorkspacePage extends React.Component {
                             <option value={item} key={item}>{item}</option>
                         )}
                     </select>
-                    <p><small>This UI also sucks. Try your four keys randomly until one works.</small></p>
-
 
                     <label htmlFor="width">Cut Area Width:</label>
                     <input type="number" id="width" name="width" min="1" max="48" value={this.state.width} onChange={this.handleChange} />
